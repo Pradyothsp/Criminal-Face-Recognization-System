@@ -40,17 +40,8 @@ for imagePath in file_path:
     # after checking that it loaded
     if image is not None:
         cv2.imshow(imagePath, image)
+        cv2.waitKey(1000)
     elif image is None:
         print ("Error loading: " + imagePath)
         #end this loop iteration and move on to next image
         continue
-    
-    # wait time in milliseconds
-    # this is required to show the image
-    # 0 = wait indefinitely
-    # exit when escape key is pressed
-    key = cv2.waitKey(0)
-    if key == 27: # escape
-        break
-
-cv2.destroyAllWindows()
